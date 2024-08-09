@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Rate, Pagination } from 'antd';
 import title from '../assets/css/Components/title.module.css';
 import styles from '../assets/css/Pages/timkiem.module.css';
+import btn from '../assets/css/Components/button.module.css';
 import { getCourseByNameApi } from '../server/action/course';
 
 const CourseSearch = (props) => {
@@ -54,7 +55,7 @@ const CourseSearch = (props) => {
                                             <Rate allowHalf defaultValue={4.5} disabled /><span className="card-text px-3">({item.luotXem})</span>
                                             <p className="card-text"><small className="text-muted">{item.ngayTao}</small></p>
                                             <div className={`${styles.btnContainer}`}>
-                                                <Link className="btn btn-outline-warning" href={`/chitiet/${item.maKhoaHoc}`} role="button">Xem chi tiết</Link>
+                                                <Link className={`btn ${btn.buttonSearch}`} href={`/chitiet/${item.maKhoaHoc}`} role="button">Xem chi tiết</Link>
                                             </div>
                                         </div>
                                     </div>
