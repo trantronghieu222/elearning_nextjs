@@ -1,0 +1,39 @@
+.dropdownMenu {
+    padding: 10px 20px;
+    background-color: #49BBBD;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+}
+
+.dropdownItem {
+    padding: 5px 0;
+}
+
+.navLink {
+    color: #ffffff !important;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.dropdownItemHover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.dropdownTrigger {
+    display: flex;
+    align-items: center;
+    color: #000;
+    text-decoration: none;
+}
+
+.dropdownTrigger:hover {
+    color: #49BBBD;
+    cursor: pointer;
+}
+
+.divider {
+    border: none;
+    height: 2px;
+    background-color: #ffffff;
+    margin: 4px 0;
+}
