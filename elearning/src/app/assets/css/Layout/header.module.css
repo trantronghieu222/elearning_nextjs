@@ -10,11 +10,11 @@
     border: 1px solid #dee2e6;
 }
 
-.dropdownItem{
+.dropdownItem {
     color: #ffffff !important;
 }
 
-.dropdownItem:hover{
+.dropdownItem:hover {
     background-color: rgba(0, 0, 0, 0.05) !important;
 }
 
@@ -30,14 +30,9 @@
     }
 }
 
-/* focus, active khi màn nhỏ */
+/* Hiển thị khi nhấn trên màn nhỏ */
 @media (max-width: 991px) {
-    .dropdownMenu {
-        display: none;
-    }
-
-    .dropdownToggle:focus + .dropdownMenu,
-    .dropdownToggle:active + .dropdownMenu {
+    .dropdownMenu.show {
         display: block;
     }
 }
