@@ -1,0 +1,32 @@
+/* .profMain {
+    margin-top: 87px;
+} */
+
+.prof .profTitle {
+    padding: 40px 0;
+    background-color: #edf5ff;
+    color: #41b294;
+}
+
+.prof .profContent {
+    padding: 50px 0;
+}
+
+.prof .profContent .profContentLeft {
+    text-align: center;
+}
+
+.prof .profContent .profContentRight .tabContent {
+    padding: 20px 0;
+}
+
+.registeredCourse .registeredItem {
+    border-bottom: 1px solid #41b294;
+    padding: 10px 0;
+}
+
+.registeredCourse .registeredItem .courseImg img {
+    width: 100%;
+    max-width: 150px;
+    max-height: 150px;
+}

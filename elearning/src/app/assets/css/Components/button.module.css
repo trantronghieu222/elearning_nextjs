@@ -1,0 +1,67 @@
+/* Button Full xanh */
+.buttonBg1 {
+    background-color: #49BBBD;
+    border: 1px solid #49BBBD;
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 35px;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.buttonBg1:hover {
+    background-color: #40a09b;
+    transform: scale(1.05);
+}
+
+/* Button viền xanh */
+.buttonBg2 {
+    background-color: #ffffff;
+    border: 1px solid #49BBBD;
+    color: #49BBBD;
+    padding: 12px 22px;
+    border-radius: 35px;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.buttonBg2:hover {
+    background-color: #49BBBD;
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+/* Button Search có chung bootstrap */
+.buttonSearch {
+    color: #49BBBD !important;
+    background-color: #ffffff !important;
+    border: 1px solid #49BBBD !important;
+}
+
+.buttonSearch:hover {
+    background-color: #49BBBD !important;
+    color: #ffffff !important;
+}
+
+/* Admin button search */
+.buttonSearchAdmin {
+    background-color: #49BBBD;
+    border: 1px solid #49BBBD;
+    padding: 8px 15px;
+    color: #ffffff;
+}
+
+.buttonSearchAdmin:hover {
+    background-color: #ffffff;
+    border: 1px solid #49BBBD;
+    transition: background-color 0.3s, transform 0.3s;
+    color: #49BBBD;
+}

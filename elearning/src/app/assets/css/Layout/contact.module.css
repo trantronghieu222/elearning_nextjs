@@ -1,0 +1,23 @@
+.contactContainer {
+    padding-bottom: 50px;
+}
+
+.contactContainer .contactLeft img {
+    width: 100%;
+    padding: 50px;
+}
+
+.contactContainer .contactRight {
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.contactContainer .contactRight p {
+    font-weight: 300;
+    padding: 10px 0;
+}
+
+.contactContainer .contactRight h1 {
+    color: #3d3e5a;
+}

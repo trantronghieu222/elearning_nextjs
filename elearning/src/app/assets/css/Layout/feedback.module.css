@@ -1,0 +1,18 @@
+.feedbackContainer {
+    padding: 50px 0;
+}
+
+.feedbackContainer .feedbackContent .feedbackItems {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.feedbackContainer .feedbackContent .feedbackItems .card {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border: none;
+}
+
+.feedbackContainer .feedbackContent .feedbackItems i {
+    color: #ff6e65;
+}

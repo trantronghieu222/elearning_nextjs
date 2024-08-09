@@ -1,0 +1,56 @@
+.courseDetail .detailContent {
+    /* padding: 50px 0; */
+}
+
+.courseDetail .detailContent .detailLeft .detailList {
+    list-style: none;
+}
+
+.courseDetail .detailContent .detailLeft .detailList i {
+    color: #3f72d7;
+    padding-right: 10px;
+}
+
+.courseDetail .detailContent .detailRight {
+    max-width: 450px;
+}
+
+.courseDetail .detailContent .detailRight .card img {
+    width: 100%;
+    object-fit: fill;
+}
+
+.courseDetail .detailContent .detailRight .card .listGroupItem {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.courseDetail .detailContent .detailRight .card .listGroupItem span {
+    font-weight: bold;
+}
+
+/* Link về trang trước */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    padding: 10px 0;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: #2F327D;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb .separator {
+    margin: 0 8px;
+    color: #999;
+}
+
+.breadcrumb .current-item {
+    font-weight: bold;
+}

@@ -1,0 +1,243 @@
+.course {
+    margin-bottom: 10px;
+}
+
+.course .cardBox {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.course .cardBox .card {
+    max-width: 250px;
+    width: 100%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;
+    border: none;
+}
+
+.cardContent {
+    text-decoration: none;
+    color: #3d3e5a;
+}
+
+.course .cardBox .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: fill;
+}
+
+.course .cardBox .card .cardTitle {
+    font-size: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 1.2em;
+}
+
+/* Price */
+.price {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.discounted {
+    color: #ff4d4f;
+    /* Màu đỏ cho giá giảm */
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.original {
+    color: #999;
+    text-decoration: line-through;
+}
+
+/* Ribbon */
+.course .cardBox .card .ribbon {
+    --f: 10px;
+    --r: 15px;
+    position: absolute;
+    top: 10px;
+    padding-inline: 10px;
+    background: #ffd60a;
+    border-bottom: var(--f) solid #0005;
+    color: #ffffff;
+    /* Replace $color-text-2 with the actual color code */
+    line-height: 1.3em;
+    font-family: sans-serif;
+    font-size: 1.2rem;
+}
+
+.course .cardBox .card .ribbon.left {
+    left: calc(-1 * var(--f));
+    border-right: var(--r) solid #0000;
+    clip-path: polygon(100% 0, 0 0, 0 calc(100% - var(--f)), var(--f) 100%, var(--f) calc(100% - var(--f)), 100% calc(100% - var(--f)), calc(100% - var(--r)) calc(50% - var(--f) / 2));
+}
+
+.course .cardBox .card .ribbon.right {
+    right: calc(-1 * var(--f));
+    border-left: var(--r) solid #0000;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--f)), calc(100% - var(--f)) 100%, calc(100% - var(--f)) calc(100% - var(--f)), 0 calc(100% - var(--f)), var(--r) calc(50% - var(--f) / 2));
+}
+
+.course .cardBox .card:hover .cardImg {
+    filter: brightness(70%);
+    transition: all 0.3s;
+}
+
+/* ---------------------Overlay------------------- */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 350px;
+    height: auto;
+    color: black;
+    display: none;
+    transition: opacity 0.3s, transform 0.3s;
+    z-index: 1000;
+}
+
+.overlayContent {
+    margin: 0 20px;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.overlay::before {
+    content: '';
+    position: absolute;
+    top: 130px;
+    left: 6px;
+    width: 30px;
+    height: 30px;
+    background-color: #ffffff;
+    border: 1px solid rgba(99, 99, 99, 0.2);
+    clip-path: polygon(100% 0, 0 100%, 100% 100%);
+    transform: rotate(135deg);
+}
+
+.card:hover .overlay {
+    display: block;
+    transform: translateX(250px);
+}
+
+.overlayUpdated span {
+    background-color: #eceb98;
+    padding: 2px 5px;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 1.2px;
+}
+
+.overlayUpdated small {
+    padding: 0 5px;
+    font-size: 14px;
+}
+
+.overlayDescribe {
+    padding: 10px 0;
+    margin-bottom: 0;
+}
+
+/* ---------------Reponsive--------------- */
+/* Col-12 */
+@media (max-width: 767px) {
+    .overlay {
+        display: none;
+    }
+
+    .card:hover .overlay {
+        display: none;
+    }
+}
+
+/* col-md-6 */
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .card.index1:hover .overlay,
+    .card.index3:hover .overlay,
+    .card.index5:hover .overlay,
+    .card.index7:hover .overlay,
+    .card.index9:hover .overlay,
+    .card.index11:hover .overlay {
+        transform: translateX(-100%);
+    }
+
+    .card.index1 .overlay::before,
+    .card.index3 .overlay::before,
+    .card.index5 .overlay::before,
+    .card.index7 .overlay::before,
+    .card.index9 .overlay::before,
+    .card.index11 .overlay::before {
+        content: '';
+        position: absolute;
+        top: 130px;
+        left: 314px;
+        width: 30px;
+        height: 30px;
+        background-color: #ffffff;
+        border: 1px solid rgba(99, 99, 99, 0.2);
+        clip-path: polygon(100% 0, 0 100%, 100% 100%);
+        transform: rotate(-45deg);
+    }
+}
+
+/* col-lg-4 */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+    .card.index2:hover .overlay,
+    .card.index5:hover .overlay,
+    .card.index8:hover .overlay,
+    .card.index11:hover .overlay {
+        transform: translateX(-100%);
+    }
+
+    .card.index2 .overlay::before,
+    .card.index5 .overlay::before,
+    .card.index8 .overlay::before,
+    .card.index11 .overlay::before {
+        content: '';
+        position: absolute;
+        top: 130px;
+        left: 314px;
+        width: 30px;
+        height: 30px;
+        background-color: #ffffff;
+        border: 1px solid rgba(99, 99, 99, 0.2);
+        clip-path: polygon(100% 0, 0 100%, 100% 100%);
+        transform: rotate(-45deg);
+    }
+}
+
+/* col-xl-3 */
+@media (min-width: 1200px) {
+
+    .card.index3:hover .overlay,
+    .card.index7:hover .overlay,
+    .card.index11:hover .overlay {
+        transform: translateX(-100%);
+    }
+
+    .card.index3 .overlay::before,
+    .card.index7 .overlay::before,
+    .card.index11 .overlay::before {
+        content: '';
+        position: absolute;
+        top: 130px;
+        left: 314px;
+        width: 30px;
+        height: 30px;
+        background-color: #ffffff;
+        border: 1px solid rgba(99, 99, 99, 0.2);
+        clip-path: polygon(100% 0, 0 100%, 100% 100%);
+        transform: rotate(-45deg);
+    }
+}

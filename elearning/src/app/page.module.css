@@ -1,0 +1,48 @@
+.homePage h3 {
+  color: #f6ba35;
+  font-size: 2rem;
+  padding: 20px 0;
+}
+/* Card đưa vô component */
+.cardBox {
+  text-decoration: none;
+  position: relative;
+}
+
+.cardBox .card{
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;
+  border: none;
+}
+
+.cardBox .card img {
+  width: 100%;
+  height: 200px;
+  object-fit: fill;
+}
+
+.cardBox .card:hover{
+  transform: translateY(-8px);
+  transition: all 0.3s;
+}
+
+.card .cardTitle{
+  height: 50px; /* Chiều cao cố định */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Số dòng tối đa */
+  -webkit-box-orient: vertical;
+  line-height: 1.2em; /* Chiều cao mỗi dòng */
+}
+
+.card .overlay{
+  content: 'aaaa';
+  position: absolute;
+  background-color: #41b294;
+  color: white;
+  padding: 0 10px;
+  width: auto;
+  height: 30px;
+  top: 58%;
+  left: 0;
+}

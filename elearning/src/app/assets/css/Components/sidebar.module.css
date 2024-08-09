@@ -1,0 +1,138 @@
+/* Sidebar */
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: var(--sidebar-bg);
+    overflow-x: hidden;
+    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+}
+
+.sidebarHeader {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.sidebarHeader h3 {
+    margin: 0;
+    font-size: 1.2em;
+    color: var(--primary-color);
+}
+
+.toggleBtn {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.toggleBtn:hover {
+    color: var(--primary-color);
+}
+
+.sidebar a {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 16px;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.sidebar a:hover {
+    background-color: var(--sidebar-hover);
+    color: var(--primary-color);
+}
+
+.sidebar a i {
+    min-width: 30px;
+    font-size: 20px;
+}
+
+#main {
+    transition: margin-left .3s;
+    padding: 20px;
+    margin-left: 250px;
+}
+
+.sidebar.closed {
+    width: 70px;
+}
+
+.sidebar.closed .sidebarHeader h3 {
+    display: none;
+}
+
+.sidebar.closed a span {
+    display: none;
+}
+
+.sidebar.closed~#main {
+    margin-left: 70px;
+}
+
+/* SidebarMobile */
+.sidebarMobile {
+    background-color: #49BBBD;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    padding: 0 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    opacity: 0;
+}
+
+.sidebarMobile a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 23px;
+    padding: 10px 15px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebarMobile a:hover {
+    background-color: #40a09b;
+    color: #ddd;
+}
+
+.sidebarMobile a i {
+    margin-right: 8px;
+}
+
+/* Reponsive */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+
+    #main {
+        margin-left: 0px;
+        padding: 0;
+        margin-bottom: 70px;
+    }
+
+    .sidebar.closed~#main {
+        margin-left: 0px;
+    }
+
+    .sidebarMobile{
+        opacity: 1;
+    }
+}

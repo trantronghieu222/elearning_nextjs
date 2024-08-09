@@ -1,0 +1,43 @@
+.navbar {
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+}
+
+.dropdownMenu {
+    display: none;
+    padding: 10px 20px !important;
+    background-color: #49BBBD !important;
+    border: 1px solid #dee2e6;
+}
+
+.dropdownItem{
+    color: #ffffff !important;
+}
+
+.dropdownItem:hover{
+    background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.dropdownToggle {
+    cursor: pointer;
+}
+
+/* Hover khi màn lớn */
+@media (min-width: 992px) {
+    .dropdown:hover .dropdownMenu {
+        display: block;
+        margin-top: 0;
+    }
+}
+
+/* focus, active khi màn nhỏ */
+@media (max-width: 991px) {
+    .dropdownMenu {
+        display: none;
+    }
+
+    .dropdownToggle:focus + .dropdownMenu,
+    .dropdownToggle:active + .dropdownMenu {
+        display: block;
+    }
+}

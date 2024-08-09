@@ -1,0 +1,97 @@
+.carousel {
+    width: 100%;
+    height: 90vh;
+    max-height: 700px;
+    margin-top: 75px;
+}
+
+.carousel .carouselLeft {
+    height: 90vh;
+    max-height: 700px;
+    display: flex;
+    align-items: center;
+}
+
+.carousel .carouselLeft .carouselContent h1 {
+    font-size: 4.5rem;
+    line-height: 1;
+    color: #3d3e5a;
+}
+
+.carousel .carouselLeft .carouselContent span{
+    color: #00CBB8;
+}
+
+.carousel .carouselLeft .carouselContent p {
+    font-size: 1.5rem;
+    padding: 15px 0;
+}
+
+/* Button */
+.carousel .carouselLeft .carouselContent .carouselBtn a {
+    margin-right: 10px;
+}
+
+.carousel .carouselImg {
+    width: 100%;
+    height: 100%;
+    background: url("/image/banner2.jpg") no-repeat center / contain;
+    object-fit: cover;
+}
+
+/* Responsive */
+@media screen and (max-width: 1199px) {
+    .carousel .carouselLeft .carouselContent h1 {
+        font-size: 4rem;
+    }
+
+    .carousel .carouselLeft .carouselContent p {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .carousel .carouselLeft .carouselContent h1 {
+        font-size: 3rem;
+    }
+
+    .carousel .carouselLeft .carouselContent p {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .carousel .carouselLeft {
+        position: relative;
+        background: url("/image/banner2.jpg") no-repeat center / contain;
+    }
+
+    .carousel .carouselLeft .carouselContent {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #ffffff;
+    }
+
+    .carousel .carouselLeft .carouselContent h1, 
+    .carousel .carouselLeft .carouselContent span{
+        color: #ffffff;
+        font-size: 2.8rem;
+    }
+
+    .carousel .carouselLeft .carouselContent p {
+        font-size: 1rem;
+    }
+
+    .carousel .carouselImg {
+        display: none;
+    }
+}

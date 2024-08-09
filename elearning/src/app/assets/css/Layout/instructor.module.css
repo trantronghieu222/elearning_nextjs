@@ -1,0 +1,65 @@
+.instructorContainer {
+    padding: 50px 0;
+}
+
+.instructorContainer .instructorContent .instructorItems {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+}
+
+.instructorContainer .instructorContent .instructorItems .card {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border: none;
+}
+
+.instructorContainer .instructorContent .instructorItems .card .cardBody {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.instructorContainer .instructorContent .instructorItems .card .cardBody h5 {
+    font-size: 1.5rem;
+}
+
+.instructorContainer .instructorContent .instructorItems .card .cardBody p {
+    font-weight: 300;
+    letter-spacing: 1.2px;
+}
+
+.instructorContainer .instructorContent .instructorItems .card .overlay {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    top: 250px;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+}
+
+.instructorContainer .instructorContent .instructorItems .card .overlay i {
+    padding: 0 10px;
+    font-size: 1.6rem;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.instructorContainer .instructorContent .instructorItems .card .overlay i:hover {
+    color: #2F5380;
+    transition: all 0.3s;
+}
+
+.instructorContainer .instructorContent .instructorItems:hover h5 {
+    color: #2F5380;
+    transition: all 0.5s;
+}
+
+.instructorContainer .instructorContent .instructorItems:hover .overlay {
+    opacity: 1;
+    transition: all 0.5s;
+}
