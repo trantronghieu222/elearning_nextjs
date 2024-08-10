@@ -7,7 +7,7 @@ import moment from 'moment';
 import { addCourseApi, getCategoryCourse } from '@/app/server/action/course';
 import { getUserInfo } from '@/app/server/action/users';
 import title from '../../../assets/css/Components/title.module.css';
-
+import btn from '../../../assets/css/Components/button.module.css';
 const ThemKhoaHoc = () => {
   const [form] = Form.useForm();
   const [numberValue, setNumberValue] = useState(0);
@@ -206,11 +206,11 @@ const ThemKhoaHoc = () => {
           <Input.TextArea rows={6} style={{ width: '100%' }} />
         </Form.Item>
         <Form.Item wrapperCol={{ span: 24 }}>
-          <Button className='me-2' type="primary" htmlType="submit">
-            Submit
+          <Button className={`me-2 ${btn.buttonSearch}`} type="primary" htmlType="submit">
+            Thêm
           </Button>
           <Button danger onClick={() => form.resetFields()}>
-            Reset
+            Đặt lại
           </Button>
         </Form.Item>
       </Form>

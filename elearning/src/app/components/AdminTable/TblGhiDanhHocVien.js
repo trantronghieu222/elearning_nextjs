@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Space, Table, Input, Row, Col, message, Form, Button, Select } from 'antd';
 import { getStudentJoinedApi, getStudentWaitingApi, getUserNotRegisApi } from '@/app/server/action/users';
 import { cancelCourseApi, enrollCourseApi } from '@/app/server/action/course';
-
+import btn from '../../assets/css/Components/button.module.css';
 const { Search } = Input;
 
 const columnChoXacThuc = (maKhoaHoc, fetchHvChoXetDuyet, fetchHvDaGhiDanh) => [
@@ -206,7 +206,7 @@ const TblGhiDanhHocVien = (props) => {
                     </Col>
                     <Col xs={24} sm={24} md={8} lg={4}>
                         <Form.Item style={{ marginBottom: 0 }}>
-                            <Button type="primary" htmlType="submit">
+                            <Button className={btn.buttonSearch} htmlType="submit">
                                 Ghi danh
                             </Button>
                         </Form.Item>
@@ -222,7 +222,11 @@ const TblGhiDanhHocVien = (props) => {
                         onSearch={handleSearchHvChoXacThuc}
                         onChange={(e) => handleSearchHvChoXacThuc(e.target.value)}
                         value={searchTextChoXet}
-                        enterButton
+                        enterButton={
+                            <button className={`${btn.buttonSearchAdmin}`}>
+                                Tìm kiếm
+                            </button>
+                        }
                     />
                 </Col>
             </Row>
@@ -246,7 +250,11 @@ const TblGhiDanhHocVien = (props) => {
                         onSearch={handleSearchHvDaThamGia}
                         onChange={(e) => handleSearchHvDaThamGia(e.target.value)}
                         value={searchTextDaGhiDanh}
-                        enterButton
+                        enterButton={
+                            <button className={`${btn.buttonSearchAdmin}`}>
+                                Tìm kiếm
+                            </button>
+                        }
                     />
                 </Col>
             </Row>

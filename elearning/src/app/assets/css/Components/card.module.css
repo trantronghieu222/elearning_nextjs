@@ -143,8 +143,13 @@
 }
 
 .overlayDescribe {
-    padding: 10px 0;
-    margin-bottom: 0;
+    margin: 10px 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
 }
 
 /* ---------------Reponsive--------------- */

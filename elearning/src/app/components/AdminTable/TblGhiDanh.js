@@ -4,7 +4,7 @@ import { Space, Table, Select, Form, Button, Row, Col } from 'antd';
 import { cancelCourseApi, enrollCourseApi } from '@/app/server/action/course';
 import { getCourseNotRegis, getCourseWaitingApi } from '@/app/server/action/users';
 import { getEnrolledCourseApi } from '@/app/server/action/users';
-
+import btn from '../../assets/css/Components/button.module.css';
 const columnChoXacThuc = (taiKhoan, fetchKhChoXetDuyet, fetchKhDaGhiDanh) => [
     {
         title: 'STT',
@@ -180,7 +180,7 @@ const TblGhiDanh = (props) => {
                     </Col>
                     <Col xs={24} sm={24} md={8} lg={4}>
                         <Form.Item style={{ marginBottom: 0 }}>
-                            <Button type="primary" htmlType="submit">
+                            <Button className={btn.buttonSearch} htmlType="submit">
                                 Ghi danh
                             </Button>
                         </Form.Item>

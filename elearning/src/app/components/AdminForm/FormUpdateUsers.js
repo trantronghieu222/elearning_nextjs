@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { Button, Form, Input, Select, message } from 'antd';
 import { getUserTypeApi, updateUserApi, getUserByName } from '@/app/server/action/users';
 import { useRouter } from 'next/navigation';
+import btn from '../../assets/css/Components/button.module.css';
 const layout = {
     labelCol: {
         span: 4,
@@ -187,7 +188,7 @@ const FormUpdateUsers = (props) => {
                         offset: 4,
                     }}
                 >
-                    <Button className='me-2' type="primary" htmlType="submit">
+                    <Button className={`${btn.buttonSearch} me-2`} type="primary" htmlType="submit">
                         Lưu
                     </Button>
                 </Form.Item>

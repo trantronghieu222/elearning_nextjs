@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import { Button, Form, Input, message } from 'antd';
 import { getUserInfo, updateUserApi } from '@/app/server/action/users';
-
+import btn from '../../assets/css/Components/button.module.css';
 const layout = {
     labelCol: {
         span: 6,
@@ -155,7 +155,7 @@ const UserProfile = (props) => {
                                 offset: 6,
                             }}
                         >
-                            <Button type="primary" htmlType="submit">
+                            <Button className={btn.buttonSearch} htmlType="submit">
                                 Cập nhật thông tin
                             </Button>
                         </Form.Item>

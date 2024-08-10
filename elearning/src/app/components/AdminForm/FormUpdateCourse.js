@@ -5,7 +5,7 @@ import { UploadOutlined } from '@ant-design/icons';
 import moment from 'moment';
 import { getCategoryCourse, updateCourseApi, updateCourseUploadApi } from '@/app/server/action/course';
 import { getUserInfo } from '@/app/server/action/users';
-
+import btn from '../../assets/css/Components/button.module.css'
 const FormUpdateCourse = (props) => {
   let { course } = props;
   const [courseDetail, setCourseDetail] = useState(course)
@@ -237,7 +237,7 @@ const FormUpdateCourse = (props) => {
           <Input.TextArea rows={6} style={{ width: '100%' }} />
         </Form.Item>
         <Form.Item wrapperCol={{ span: 24 }}>
-          <Button className='me-2' type="primary" htmlType="submit">
+          <Button className={`me-2 ${btn.buttonSearch}`} type="primary" htmlType="submit">
             Lưu
           </Button>
         </Form.Item>

@@ -16,7 +16,7 @@ const quanlykhoahoc = () => {
         })
     }, [])
     return (
-        <div>
+        <div style={{ padding: '32px' }}>
             <div className={title.title2}>
                 <h1 className={`${title.title_content} text-center`}>Quản lý khoá học</h1>
             </div>

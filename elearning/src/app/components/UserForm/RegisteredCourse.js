@@ -4,6 +4,7 @@ import { Rate, Pagination, Input, message } from 'antd';
 import { getUserInfo } from '@/app/server/action/users';
 import { cancelCourseApi } from '@/app/server/action/course';
 import styles from '../../assets/css/Pages/thongtintaikhoan.module.css';
+import btn from '../../assets/css/Components/button.module.css';
 import { useRouter } from 'next/navigation';
 const { Search } = Input;
 
@@ -79,7 +80,11 @@ const RegisteredCourse = () => {
                         onSearch={handleSearch}
                         onChange={(e) => handleSearch(e.target.value)}
                         value={searchText}
-                        enterButton
+                        enterButton={
+                            <button className={`${btn.buttonSearchAdmin}`}>
+                                Tìm kiếm
+                            </button>
+                        }
                     />
                 </div>
             </div>

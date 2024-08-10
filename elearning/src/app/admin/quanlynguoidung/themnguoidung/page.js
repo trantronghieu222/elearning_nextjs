@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import { Button, Form, Input, Select, message } from 'antd';
 import title from '../../../assets/css/Components/title.module.css';
+import btn from '../../../assets/css/Components/button.module.css';
 import Link from 'next/link';
 import { addUserApi, getUserTypeApi } from '@/app/server/action/users';
 const layout = {
@@ -157,7 +158,7 @@ const ThemNguoiDung = () => {
                         offset: 4,
                     }}
                 >
-                    <Button className='me-2' type="primary" htmlType="submit">
+                    <Button className={`${btn.buttonSearch} me-2`} type="primary" htmlType="submit">
                         Thêm người dùng
                     </Button>
                     <Button danger onClick={() => form.resetFields()}>

@@ -1,14 +1,17 @@
 import React from 'react'
 import Link from 'next/link'
 import TblGhiDanh from '@/app/components/AdminTable/TblGhiDanh';
+import title from '../../../../assets/css/Components/title.module.css';
 const GhiDanhHocVien = (props) => {
     const { tham_so } = props.params;
-    
+
     return (
-        <div>
-            <h1 className='text-center pb-3'>
-                Ghi danh học viên
-            </h1>
+        <div style={{ padding: '32px' }}>
+            <div className={title.title2}>
+                <h1 className={`${title.title_content} text-center`}>
+                    Ghi danh học viên
+                </h1>
+            </div>
 
             {/* Table ghi danh và chờ xét duyệt */}
             <TblGhiDanh taiKhoan={tham_so}></TblGhiDanh>
