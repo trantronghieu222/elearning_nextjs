@@ -9,8 +9,8 @@ const Carousel = () => {
           <div className='row'>
             <div className={`col-12 col-md-6 ${styles.carouselLeft}`}>
                 <div className={`${styles.carouselContent}`}>
-                    <h1><span>Khởi đầu</span> <br></br> sự nghiệp của bạn</h1>
-                    <p>Trở thành lập trình <br></br> chuyên nghiệp tại cybersoft</p>
+                    <h1><span>Chào mừng</span> <br></br> đến với E-learning</h1>
+                    <p>Trung tâm giáo dục <br></br> hàng đầu về lập trình tại Việt Nam</p>
                     <div className={`${styles.carouselBtn}`}>
                         <a className={`${btn.buttonBg1}`} href="#" role="button">Xem khoá học</a>
                         <a className={`${btn.buttonBg2}`} href="#" role="button">Tư vấn học</a>              

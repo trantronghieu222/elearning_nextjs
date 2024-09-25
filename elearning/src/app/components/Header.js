@@ -7,6 +7,7 @@ import styles from '../assets/css/Layout/header.module.css';
 import btn from '../assets/css/Components/button.module.css';
 import { getCategoryCourse } from '../server/action/course';
 import { useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 const Header = (props) => {
     const { category } = props;
@@ -15,6 +16,7 @@ const Header = (props) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [showDropdown, setShowDropdown] = useState(false);
     const router = useRouter();
+    const currentPath = usePathname();
 
     useEffect(() => {
         getCategoryCourse().then(result => {
@@ -32,7 +34,7 @@ const Header = (props) => {
             });
     }, []);
 
-    // render ra đăng nhập hoặc tài khoản --
+    // render ra đăng nhập hoặc tài khoản
     const renderLoginLink = () => {
         if (userLogin) {
             return <UserDropdown userLogin={userLogin} />;
@@ -67,11 +69,22 @@ const Header = (props) => {
                     <div className="collapse navbar-collapse px-5" id="collapsibleNavId">
                         <ul className="navbar-nav me-auto mt-2 mt-lg-0">
                             <li className="nav-item">
-                                <Link className={`nav-link active ${styles.navLink}`} href="/" aria-current="page">Trang chủ
-                                    <span className="visually-hidden">(current)</span></Link>
+                                <Link
+                                    href="/"
+                                    className={`nav-link ${styles.navLink} ${currentPath === '/' ? `active ${styles.active}` : ''}`}
+                                    aria-current="page"
+                                >
+                                    Trang chủ
+                                </Link>
                             </li>
                             <li className="nav-item">
-                                <Link className={`nav-link ${styles.navLink}`} href='/khoahoc' aria-current="page">Khoá học</Link>
+                                <Link
+                                    href="/khoahoc"
+                                    className={`nav-link ${styles.navLink} ${currentPath === '/khoahoc' ? `active ${styles.active}` : ''}`}
+                                    aria-current="page"
+                                >
+                                    Khoá học
+                                </Link>
                             </li>
                             <li className={`nav-item dropdown ${styles.dropdown}`}>
                                 <a className={`nav-link dropdown-toggle ${styles.dropdownToggle}`} href="#" onClick={handleDropdownToggle} aria-haspopup="true" aria-expanded={showDropdown}>Danh mục khoá học</a>

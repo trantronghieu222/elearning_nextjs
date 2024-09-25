@@ -15,7 +15,7 @@ const Sidebar = () => {
     return (
         <div id="mySidebar" className={styles.sidebar}>
             <div className={styles.sidebarHeader}>
-                <h3><img className='w-75' src="../image/logo.png" alt="logo-cyber" /></h3>
+                <h3><img className='w-75' src="/image/logo.png" alt="logo" /></h3>
                 <button className={styles.toggleBtn} type='button' onClick={toggleNav}>
                     <i className="fas fa-bars" />
                 </button>

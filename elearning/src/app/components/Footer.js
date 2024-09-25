@@ -9,11 +9,11 @@ const Footer = () => {
                     <div className={`${styles.ftCol} col-12 col-lg-4`}>
                         <div className={`${styles.Ftlogo}`}>
                             <img src='/image/logo.png' width={200} alt='Logo Cyber'></img>
-                            <p>Cybersoft Academy - Hệ thống đào tạo lập trình chuyên sâu theo dự án thực tế</p>
+                            <p>E-learning - Hệ thống đào tạo lập trình chuyên sâu theo dự án thực tế</p>
                         </div>
                         <div className={`${styles.ftNews}`}>
                             <h3>Nhận tin sự kiện & khuyến mãi</h3>
-                            <p>Cybersoft sẽ gởi các khoá học trực tuyến & các chương trình CyberLive hoàn toàn MIỄN PHÍ và các chương trình KHUYẾN MÃI hấp dẫn đến các bạn</p>
+                            <p>E-learning sẽ gởi các khoá học trực tuyến & các chương trình hoàn toàn MIỄN PHÍ và các chương trình KHUYẾN MÃI hấp dẫn đến các bạn</p>
                             <div className={`${styles.newsRegis} input-group`}>
                                 <div className="form-outline" data-mdb-input-init>
                                     <input type="search" id="form1" className="form-control" placeholder='your.address@gmail.com' />

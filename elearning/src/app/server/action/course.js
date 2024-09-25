@@ -68,6 +68,7 @@ export const delCourseApi = async (maKH) => {
         message.success('Xoá khoá học thành công')
         return res.data;
     } catch (error) {
+        message.error(error.response?.data || 'Có lỗi xảy ra')
         console.log("Error: ", error)
     }
 }
