@@ -223,9 +223,9 @@ const FormUpdateCourse = (props) => {
               </Upload>
             </Form.Item>
           </Col>
-          <Col xs={24} sm={12}>
+          {/* <Col xs={24} sm={12}>
             <Image width={100} src={courseDetail.hinhAnh}></Image>
-          </Col>
+          </Col> */}
         </Row>
         <Form.Item
           name="moTa"

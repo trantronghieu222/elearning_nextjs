@@ -18,7 +18,7 @@ import BackToTop from "./components/BackToTop";
 export default async function Home() {
   const category = await getCategoryCourse();
   const courseList = await getCourseApi();
-  const sortedCourses = courseList.sort((a, b) => new Date(b.ngayTao) - new Date(a.ngayTao)).slice(0, 8);
+  const sortedCourses = courseList.sort((a, b) => new Date(b.ngayTao) - new Date(a.ngayTao)).slice(1, 9);
   return (
     <main>
       <Header category={category}></Header>

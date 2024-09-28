@@ -1,7 +1,7 @@
 import axios from "axios";
 import {getDataTextStorage, TOKEN_AUTHOR } from "./function";
 
-const tokenCyber = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5Mb3AiOiJCb290Y2FtcCA2NSIsIkhldEhhblN0cmluZyI6IjI1LzExLzIwMjQiLCJIZXRIYW5UaW1lIjoiMTczMjQ5MjgwMDAwMCIsIm5iZiI6MTcwMjMxNDAwMCwiZXhwIjoxNzMyNjQwNDAwfQ._Cum2zMqV8nsbUfpCOe0ILWE_GvP8V8FQnmOR8PRB44";
+const tokenCyber = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5Mb3AiOiJOb2RlSlMgNDMiLCJIZXRIYW5TdHJpbmciOiIyMi8wMS8yMDI1IiwiSGV0SGFuVGltZSI6IjE3Mzc1MDQwMDAwMDAiLCJuYmYiOjE3MTk0MjEyMDAsImV4cCI6MTczNzY1MTYwMH0.yD2N0oalf1e_BvxtjGSnop-j1KlY60H7R3mfNzGtB9Y";
 
 const httpApiElearning = axios.create({
     baseURL: 'https://elearningnew.cybersoft.edu.vn',
