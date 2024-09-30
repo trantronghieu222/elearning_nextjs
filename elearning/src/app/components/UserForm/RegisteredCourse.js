@@ -28,7 +28,6 @@ const RegisteredCourse = () => {
             setFilteredCourses(result.chiTietKhoaHocGhiDanh);
             setTaiKhoan(result.taiKhoan);
         } catch (error) {
-            // message.error('Lỗi khi tải thông tin người dùng.');
             router.push('not-found');
         }
     };
@@ -50,7 +49,6 @@ const RegisteredCourse = () => {
         }
     };
 
-    // Huỷ khoá học
     const handleCancelCourse = async (maKhoaHoc) => {
         if (window.confirm('Bạn có chắc chắn muốn huỷ không?')) {
             try {
@@ -73,7 +71,6 @@ const RegisteredCourse = () => {
                 <div className='col-12 col-sm-6'>
                     <h3 className='mb-4'>Các khoá học đã tham gia</h3>
                 </div>
-                {/* Search Form */}
                 <div className='col-12 col-sm-6'>
                     <Search
                         placeholder="Tìm kiếm mã hoặc tên khoá học"

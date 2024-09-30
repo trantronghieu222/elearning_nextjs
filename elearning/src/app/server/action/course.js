@@ -1,13 +1,11 @@
 import { httpApiElearning } from "@/app/util/setting";
 import { message } from "antd";
 
-// Lấy danh sách khoá học
 export const getCourseApi = async () => {
     const res = await httpApiElearning.get('/api/QuanLyKhoaHoc/LayDanhSachKhoaHoc');
     return res.data;
 }
 
-// Lấy thông tin khoá học
 export const getCourseByIdApi = async (courseId) => {
     try {
         const res = await httpApiElearning.get(`/api/QuanLyKhoaHoc/LayThongTinKhoaHoc?maKhoaHoc=${courseId}`);
@@ -17,7 +15,6 @@ export const getCourseByIdApi = async (courseId) => {
     }
 }
 
-// Thêm khoá học upload hình
 export const addCourseApi = async (courseData) => {
     try {
         const res = await httpApiElearning.post('/api/QuanLyKhoaHoc/ThemKhoaHocUploadHinh', courseData);
@@ -27,7 +24,6 @@ export const addCourseApi = async (courseData) => {
     }
 }
 
-// Sửa khoá học upload hình (Chưa làm xong)
 export const updateCourseUploadApi = async (courseData) => {
     try {
         const res = await httpApiElearning.post('/api/QuanLyKhoaHoc/CapNhatKhoaHocUpload', courseData);
@@ -49,7 +45,6 @@ export const updateCourseApi = async (courseData) => {
     }
 }
 
-// Lấy danh mục khoá học
 export const getCategoryCourse = async () => {
     try {
         const res = await httpApiElearning.get('/api/QuanLyKhoaHoc/LayDanhMucKhoaHoc');
@@ -59,7 +54,6 @@ export const getCategoryCourse = async () => {
     }
 }
 
-// Xoá khoá học
 export const delCourseApi = async (maKH) => {
     try {
         const res = await httpApiElearning.delete('/api/QuanLyKhoaHoc/XoaKhoaHoc', {
@@ -73,7 +67,6 @@ export const delCourseApi = async (maKH) => {
     }
 }
 
-// Lấy khoá học theo danh mục
 export const getCourseByCategoryApi = async (maDanhMuc) => {
     try {
         const res = await httpApiElearning.get(`/api/QuanLyKhoaHoc/LayKhoaHocTheoDanhMuc?maDanhMuc=${maDanhMuc}`);
@@ -83,7 +76,6 @@ export const getCourseByCategoryApi = async (maDanhMuc) => {
     }
 }
 
-// Tìm kiếm khoá học
 export const getCourseByNameApi = async (tenKH, page, pageSize) => {
     try {
         const res = await httpApiElearning.get(`/api/QuanLyKhoaHoc/LayDanhSachKhoaHoc_PhanTrang?tenKhoaHoc=${tenKH}&page=${page}&pageSize=${pageSize}`);
@@ -93,8 +85,6 @@ export const getCourseByNameApi = async (tenKH, page, pageSize) => {
     }
 }
 
-/* ---------------------------------- Ghi danh khoá học ---------------------------------- */
-// Ghi danh khoá học (13.2.4)
 export const enrollCourseApi = async (maKH, TK) => {
     try {
         const res = await httpApiElearning.post('/api/QuanLyKhoaHoc/GhiDanhKhoaHoc', {
@@ -109,7 +99,6 @@ export const enrollCourseApi = async (maKH, TK) => {
     }
 }
 
-// Đăng ký khoá học
 export const registerCourseApi = async (maKH, TK) => {
     try {
         const res = await httpApiElearning.post('/api/QuanLyKhoaHoc/DangKyKhoaHoc', {
@@ -124,7 +113,6 @@ export const registerCourseApi = async (maKH, TK) => {
     }
 }
 
-// Huỷ ghi danh (13.2.5)
 export const cancelCourseApi = async (maKH, TK) => {
     try {
         const res = await httpApiElearning.post('/api/QuanLyKhoaHoc/HuyGhiDanh', {

@@ -81,7 +81,6 @@ const UserProfile = (props) => {
             >
                 <div className="form-container">
                     <div className="form-column">
-                        {/* Họ tên */}
                         <Form.Item
                             name="hoTen"
                             label="Họ tên"
@@ -93,7 +92,6 @@ const UserProfile = (props) => {
                         >
                             <Input />
                         </Form.Item>
-                        {/* Email */}
                         <Form.Item
                             name="email"
                             label="Email"
@@ -106,7 +104,6 @@ const UserProfile = (props) => {
                         >
                             <Input />
                         </Form.Item>
-                        {/* Số điện thoại */}
                         <Form.Item
                             name="soDT"
                             label="Số điện thoại"
@@ -124,7 +121,6 @@ const UserProfile = (props) => {
                         </Form.Item>
                     </div>
                     <div className="form-column">
-                        {/* Tài khoản */}
                         <Form.Item
                             name="taiKhoan"
                             label="Tài khoản"
@@ -136,7 +132,6 @@ const UserProfile = (props) => {
                         >
                             <Input disabled />
                         </Form.Item>
-                        {/* Mật khẩu */}
                         <Form.Item
                             name="matKhau"
                             label="Mật khẩu"
@@ -148,7 +143,6 @@ const UserProfile = (props) => {
                         >
                             <Input.Password />
                         </Form.Item>
-                        {/* Button submit */}
                         <Form.Item
                             wrapperCol={{
                                 ...layout.wrapperCol,

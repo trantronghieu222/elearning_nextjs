@@ -32,7 +32,6 @@ const ThongTinTaiKhoan = () => {
                     </div>
                     <div className={`${styles.profContentRight} col-12 col-md-9 px-5`}>
                         <div>
-                            {/* Tab */}
                             <ul className={`nav nav-tabs ${styles.navTabs}`} id="myTab" role="tablist">
                                 <li className={`nav-item ${styles.navItem}`} role="presentation">
                                     <button
@@ -63,7 +62,6 @@ const ThongTinTaiKhoan = () => {
                                     </button>
                                 </li>
                             </ul>
-                            {/* Content */}
                             <div className={`${styles.tabContent} tab-content`} id="myTabContent">
                                 <div className="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                     <UserProfile thongTin={thongTinTaiKhoan}></UserProfile>

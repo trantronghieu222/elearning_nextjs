@@ -8,7 +8,6 @@ import {
 } from "@/app/util/function";
 import { message } from 'antd';  
 
-// Lấy danh sách người dùng
 export const getUserApi = async () => {
   try {
     const res = await httpApiElearning.get('/api/QuanLyNguoiDung/LayDanhSachNguoiDung');
@@ -18,7 +17,6 @@ export const getUserApi = async () => {
   }
 }
 
-// Tìm kiếm người dùng
 export const getUserByName = async (taiKhoan) => {
   try {
     const res = await httpApiElearning.get(`/api/QuanLyNguoiDung/TimKiemNguoiDung?tuKhoa=${taiKhoan}`);
@@ -28,7 +26,6 @@ export const getUserByName = async (taiKhoan) => {
   }
 }
 
-// Lấy thông tin người dùng
 export const getUserInfo = async () => {
   try {
     const res = await httpApiElearning.post('/api/QuanLyNguoiDung/ThongTinTaiKhoan')
@@ -38,7 +35,6 @@ export const getUserInfo = async () => {
   }
 }
 
-// Lấy danh sách loại người dùng
 export const getUserTypeApi = async () => {
   try {
     const res = await httpApiElearning.get('/api/QuanLyNguoiDung/LayDanhSachLoaiNguoiDung')
@@ -48,7 +44,6 @@ export const getUserTypeApi = async () => {
   }
 }
 
-// Hàm thêm người dùng 
 export const addUserApi = async (user) => {
   try {
     const res = await httpApiElearning.post('/api/QuanLyNguoiDung/ThemNguoiDung', user);
@@ -59,7 +54,6 @@ export const addUserApi = async (user) => {
   }
 };
 
-// Hàm xoá người dùng
 export const delUserApi = async (taiKhoan) => {
   try {
     const res = await httpApiElearning.delete('/api/QuanLyNguoiDung/XoaNguoiDung', {
@@ -73,7 +67,6 @@ export const delUserApi = async (taiKhoan) => {
   }
 };
 
-// Hàm cập nhật thông tin người dùng
 export const updateUserApi = async (userInf) => {
   try {
     const res = await httpApiElearning.put('/api/QuanLyNguoiDung/CapNhatThongTinNguoiDung', userInf);
@@ -85,8 +78,6 @@ export const updateUserApi = async (userInf) => {
   }
 }
 
-/* ---------------------------------- Trang ghi danh học viên ---------------------------------- */
-// Hàm lấy danh sách khoá học chờ xét duyệt (13.2.3)
 export const getCourseWaitingApi = async (taiKhoan) => {
   try {
     const res = await httpApiElearning.post('/api/QuanLyNguoiDung/LayDanhSachKhoaHocChoXetDuyet', { taiKhoan });
@@ -96,7 +87,6 @@ export const getCourseWaitingApi = async (taiKhoan) => {
   }
 }
 
-// Hàm lấy danh sách khoá học đã ghi danh (13.2.2)
 export const getEnrolledCourseApi = async (taiKhoan) => {
   try {
     const res = await httpApiElearning.post('/api/QuanLyNguoiDung/LayDanhSachKhoaHocDaXetDuyet', { taiKhoan });
@@ -106,7 +96,6 @@ export const getEnrolledCourseApi = async (taiKhoan) => {
   }
 }
 
-// Lấy danh sách khoá học chưa ghi danh (13.2.1)
 export const getCourseNotRegis = async (taiKhoan) => {
   try {
     const res = await httpApiElearning.post('/api/QuanLyNguoiDung/LayDanhSachKhoaHocChuaGhiDanh', { taiKhoan });
@@ -116,7 +105,6 @@ export const getCourseNotRegis = async (taiKhoan) => {
   }
 }
 
-// Hàm lấy danh sach học viên chờ xác thực (13.1.3)
 export const getStudentWaitingApi = async (maKhoaHoc) => {
   try {
     const res = await httpApiElearning.post('/api/QuanLyNguoiDung/LayDanhSachHocVienChoXetDuyet', { maKhoaHoc });
@@ -126,7 +114,6 @@ export const getStudentWaitingApi = async (maKhoaHoc) => {
   }
 }
 
-// Hàm lấy danh sách học viên đã tham gia khoá học (13.1.2)
 export const getStudentJoinedApi = async (maKhoaHoc) => {
   try {
     const res = await httpApiElearning.post('/api/QuanLyNguoiDung/LayDanhSachHocVienKhoaHoc', { maKhoaHoc });
@@ -136,7 +123,6 @@ export const getStudentJoinedApi = async (maKhoaHoc) => {
   }
 }
 
-// Lấy danh sách người dùng chưa ghi danh (13.1.1)
 export const getUserNotRegisApi = async (maKhoaHoc) => {
   try {
     const res = await httpApiElearning.post('/api/QuanLyNguoiDung/LayDanhSachNguoiDungChuaGhiDanh', { maKhoaHoc });
@@ -146,8 +132,6 @@ export const getUserNotRegisApi = async (maKhoaHoc) => {
   }
 }
 
-/* ---------------------------------- Trang đăng nhập, đăng ký ---------------------------------- */
-// Hàm đăng nhập
 export const loginActionApi = async (taiKhoan, matKhau) => {
   try {
     const res = await httpApiElearning.post('/api/QuanLyNguoiDung/DangNhap', { taiKhoan, matKhau });
@@ -159,7 +143,6 @@ export const loginActionApi = async (taiKhoan, matKhau) => {
   }
 };
 
-// Hàm đăng xuất
 export const handleLogout = () => {
   message.success('Đã đăng xuất thành công');
   removeDataStorage(TOKEN_AUTHOR);
@@ -169,7 +152,6 @@ export const handleLogout = () => {
   }, 1000);
 };
 
-// Hàm đăng ký
 export const signupActionApi = async (userRegis) => {
   try {
     const res = await httpApiElearning.post('/api/QuanLyNguoiDung/DangKy', userRegis);
