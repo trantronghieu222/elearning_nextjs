@@ -50,7 +50,7 @@ const Detail = (props) => {
                             Bạn đang tìm kiếm cơ hội để bước chân vào thế giới thiết kế website - nâng cao trải nghiệm người dùng? Khóa học
                             <strong>
                                 <span style={{ background: '#ffff00' }}>
-                                    &nbsp;Kỹ thuật viên thiết kế Website UX/UI&nbsp;
+                                    &nbsp;{chiTietKh?.tenKhoaHoc || 'N/A'}&nbsp;
                                 </span>
                             </strong>
                             của Trung Tâm sẽ là điểm khởi đầu hoàn hảo cho hành trình của bạn!
