@@ -24,7 +24,7 @@ const UserProfile = (props) => {
     const [form] = Form.useForm();
     const [thongTinAdmin, setThongTinAdmin] = useState(thongTin);
 
-    const onFinish = async (values) => {
+    const updateProfile = async (values) => {
         try {
             const users = {
                 taiKhoan: values.taiKhoan,
@@ -36,6 +36,10 @@ const UserProfile = (props) => {
                 email: values.email
             }
             await updateUserApi(users);
+            // không cần thiết
+            setTimeout(() => {
+                window.location.href = '/thongtintaikhoan';
+            }, 1000);
         } catch {
             message.error('Cập nhật thông tin thất bại');
         }
@@ -66,7 +70,7 @@ const UserProfile = (props) => {
                 form={form}
                 {...layout}
                 name="nest-messages"
-                onFinish={onFinish}
+                onFinish={updateProfile}
                 style={{
                     maxWidth: 1000,
                 }}
@@ -139,6 +143,7 @@ const UserProfile = (props) => {
                                 {
                                     required: true,
                                 },
+                                { min: 6, max: 20, message: 'Mật khẩu phải từ 6 đến 20 ký tự!' },
                             ]}
                         >
                             <Input.Password />

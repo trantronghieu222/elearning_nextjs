@@ -6,8 +6,7 @@ import { getUserInfo } from '../server/action/users';
 import styles from '../assets/css/Layout/header.module.css';
 import btn from '../assets/css/Components/button.module.css';
 import { getCategoryCourse } from '../server/action/course';
-import { useRouter } from 'next/navigation';
-import { usePathname } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 
 const Header = (props) => {
     const { category } = props;
@@ -15,6 +14,7 @@ const Header = (props) => {
     const [categoryCourse, setCategoryCourse] = useState(category);
     const [searchTerm, setSearchTerm] = useState('');
     const [showDropdown, setShowDropdown] = useState(false);
+    const [loading, setLoading] = useState(true);
     const router = useRouter();
     const currentPath = usePathname();
 
@@ -31,11 +31,18 @@ const Header = (props) => {
             })
             .catch(error => {
                 console.error('Error fetching user info:', error);
+            })
+            .finally(() => {
+                setLoading(false);
             });
     }, []);
 
     // render ra đăng nhập hoặc tài khoản
     const renderLoginLink = () => {
+        if (loading) {
+            return null;
+        }
+
         if (userLogin) {
             return <UserDropdown userLogin={userLogin} />;
         } else {

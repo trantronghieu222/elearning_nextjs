@@ -9,7 +9,7 @@ import { useRouter } from 'next/navigation';
 import 'antd/dist/reset.css';
 const dangnhap = () => {
   const router = useRouter();
-  
+
   const onFinish = async (values) => {
     const result = await loginActionApi(values.taiKhoan, values.matKhau);
     if (result.success) {
@@ -37,7 +37,9 @@ const dangnhap = () => {
 
       <Form.Item
         name="matKhau"
-        rules={[{ required: true, message: 'Không được để trống mật khẩu!' }]}
+        rules={[
+          { required: true, message: 'Không được để trống mật khẩu!' },
+        ]}
       >
         <Input.Password prefix={<LockOutlined className="site-form-item-icon" />} className={styles.antInput} placeholder="Mật khẩu" />
       </Form.Item>
@@ -52,17 +54,17 @@ const dangnhap = () => {
       </Form.Item>
 
       <Form.Item>
-        <Button type="primary" htmlType="submit" className={`${styles.loginFormButton} ${styles.antBtn}`}>
+        <Button type="primary" htmlType="submit" id="login-button" className={`${styles.loginFormButton} ${styles.antBtn}`}>
           ĐĂNG NHẬP
         </Button>
       </Form.Item>
       Bạn không có tài khoản? <Link href="/users/dangky" className={styles.loginRegis}>đăng ký ngay!</Link>
-      <div className={`${styles.loginSocial}`}>
+      {/* <div className={`${styles.loginSocial}`}>
         <span className='text-center'>Đăng nhập với </span>
         <a href='#'><i className={`fab fa-facebook ${styles.facebook}`}></i></a>
         <a href='#'><i className={`fab fa-twitter ${styles.twitter}`}></i></a>
         <a href='#'><i className={`fab fa-google-plus-g ${styles.google}`}></i></a>
-      </div>
+      </div> */}
     </Form>
   );
 };

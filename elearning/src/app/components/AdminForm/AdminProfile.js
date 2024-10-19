@@ -39,12 +39,16 @@ const AdminProfile = (props) => {
                 email: values.email
             }
             await updateUserApi(users);
+            // không cần thiết
+            setTimeout(() => {
+                window.location.href = '/admin/thongtinadmin';
+            }, 1000);
         } catch {
             console.log('Cập nhật thông tin thất bại')
         }
     };
 
-    
+
 
     useEffect(() => {
         const fetchUser = async () => {

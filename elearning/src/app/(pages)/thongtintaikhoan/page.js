@@ -26,7 +26,8 @@ const ThongTinTaiKhoan = () => {
             <div className={`${styles.profContent} container`}>
                 <div className='row'>
                     <div className={`${styles.profContentLeft} col-12 col-md-3`}>
-                        <img src="https://i.pravatar.cc?1" width={150} className='rounded-circle mb-3' alt="" />
+                        {/* <img src="https://i.pravatar.cc?1" width={150} className='rounded-circle mb-3' alt="" /> */}
+                        <img src="/image/avt_boy.png" width={150} className='rounded-circle mb-3' alt="" />
                         <h5>Thông tin người dùng </h5>
                         <button className={`${btn.buttonBg1} mb-3`}>Hồ sơ cá nhân</button>
                     </div>

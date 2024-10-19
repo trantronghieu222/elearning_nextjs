@@ -14,7 +14,7 @@ const UserDropdown = (props) => {
       key: '0',
     },
     {
-      label: <a className={styles.navLink} onClick={handleLogout}>Đăng xuất</a>,
+      label: <a className={styles.navLink} id="button-logout" onClick={handleLogout}>Đăng xuất</a>,
       key: '1',
     }
   ];

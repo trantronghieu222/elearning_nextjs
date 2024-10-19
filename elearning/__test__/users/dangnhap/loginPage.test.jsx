@@ -9,7 +9,7 @@ jest.mock('next/navigation', () => ({
     useRouter: jest.fn(),
 }));
 
-describe('DangNhap Page', () => {
+describe('TC_DangNhap', () => {
     // Kiểm tra các phần tử trong form đăng nhập
     it('renders login form', () => {
         render(<DangNhap />);
@@ -20,12 +20,11 @@ describe('DangNhap Page', () => {
         expect(screen.getByText('Quên mật khẩu')).toBeInTheDocument();
         expect(screen.getByText('Bạn không có tài khoản?')).toBeInTheDocument();
         expect(screen.getByText('đăng ký ngay!')).toBeInTheDocument();
-        expect(screen.getByText('Đăng nhập với')).toBeInTheDocument();
         expect(screen.getByRole('button', { name: 'ĐĂNG NHẬP' })).toBeInTheDocument();
     });
 
-    // Kiểm tra validation
-    it('shows error message when fields are empty', async () => {
+    // Kiểm tra rỗng
+    it('TC01_DangNhap_Rong', async () => {
         useRouter.mockImplementation(() => ({
             push: jest.fn(),
         }));
@@ -37,7 +36,7 @@ describe('DangNhap Page', () => {
     });
 
     // Kiểm tra đăng nhập thành công
-    it('logs in successfully with valid credentials and shows success message', async () => {
+    it('TC02_DangNhap_ThanhCong', async () => {
         const mockPush = jest.fn();
         useRouter.mockImplementation(() => ({
             push: mockPush,
@@ -61,7 +60,7 @@ describe('DangNhap Page', () => {
     });
 
     // Kiểm tra đăng nhập thất bại
-    it('logs in failed with invalid credentials and shows error message', async () => {
+    it('TC03_DangNhap_ThatBai', async () => {
         const mockPush = jest.fn();
         useRouter.mockImplementation(() => ({
             push: mockPush,

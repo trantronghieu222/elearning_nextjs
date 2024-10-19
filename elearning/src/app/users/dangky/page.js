@@ -13,16 +13,16 @@ import {
 const dangky = () => {
   const [form] = Form.useForm();
   const onFinish = (values) => {
-      const userRegis = {
-        taiKhoan: values.taiKhoan,
-        matKhau: values.matKhau,
-        hoTen: values.hoTen,
-        soDT: values.soDT,
-        maNhom: 'GP01',
-        email: values.email
-      }
-      signupActionApi(userRegis);
-      form.resetFields();
+    const userRegis = {
+      taiKhoan: values.taiKhoan,
+      matKhau: values.matKhau,
+      hoTen: values.hoTen,
+      soDT: values.soDT,
+      maNhom: 'GP01',
+      email: values.email
+    }
+    signupActionApi(userRegis);
+    form.resetFields();
   };
   return (
     <Form
@@ -43,7 +43,10 @@ const dangky = () => {
 
       <Form.Item
         name="matKhau"
-        rules={[{ required: true, message: 'Không được để trống mật khẩu!' }]}
+        rules={[
+          { required: true, message: 'Không được để trống mật khẩu!' },
+          { min: 6, max: 20, message: 'Mật khẩu phải từ 6 đến 20 ký tự!' },
+        ]}
         hasFeedback
       >
         <Input.Password prefix={<LockOutlined />} placeholder='Mật khẩu' className={styles.antInput} />

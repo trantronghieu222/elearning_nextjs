@@ -45,7 +45,7 @@ const columns = (fetchData) => [
         render: (_, record) => (
             <Space size="middle">
                 <Link href={`quanlynguoidung/ghidanhhocvien/${record.taiKhoan}`} className='btn btn-primary'>Ghi danh</Link>
-                <Link href={`quanlynguoidung/suanguoidung/${record.taiKhoan}`} className='btn btn-warning'>Sửa</Link>
+                <Link href={`quanlynguoidung/suanguoidung/${record.taiKhoan}`} className='btn btn-warning'><i className="fa fa-edit"></i></Link>
                 <button
                     className='btn btn-danger'
                     onClick={async () => {
@@ -59,7 +59,7 @@ const columns = (fetchData) => [
                         }
                     }}
                 >
-                    Xoá
+                    <i className="fa fa-trash"></i>
                 </button>
             </Space>
         ),
