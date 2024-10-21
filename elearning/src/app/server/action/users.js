@@ -156,6 +156,7 @@ export const signupActionApi = async (userRegis) => {
   try {
     const res = await httpApiElearning.post('/api/QuanLyNguoiDung/DangKy', userRegis);
     message.success('Đăng ký thành công');
+    return res.data
   } catch (error) {
     message.error(error.response.data);
   }

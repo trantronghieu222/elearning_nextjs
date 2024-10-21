@@ -8,15 +8,16 @@ const Header = () => {
     const [adminProfile, setAdminProfile] = useState();
     const router = useRouter();
 
-    useEffect(() => {
-        getUserInfo().then(result => {
-            if (result.maLoaiNguoiDung == 'GV') {
-                setAdminProfile(result);
-            } else {
-                router.push('/not-found');
-            }
-        })
-    }, [])
+    // useEffect(() => {
+    //     getUserInfo().then(result => {
+    //         if (result.maLoaiNguoiDung == 'GV') {
+    //             setAdminProfile(result);
+    //         } else {
+    //             // Tạo Bug
+    //             // router.push('/not-found');
+    //         }
+    //     })
+    // }, [])
 
     useEffect(() => {
         const checkUser = async () => {
@@ -26,7 +27,8 @@ const Header = () => {
                 if (result && result.maLoaiNguoiDung === 'GV') {
                     setAdminProfile(result);
                 } else {
-                    router.push('/not-found');
+                    // Tạo Bug
+                    // router.push('/not-found');
                 }
             } catch (error) {
                 console.error('Failed to fetch user info:', error);
@@ -43,10 +45,11 @@ const Header = () => {
 
     return (
         <div className='header-admin d-flex justify-content-end'>
-            <p className='d-flex align-items-center px-2 py-0'>Chào! {adminProfile.hoTen}</p>
+            <span className='d-flex align-items-center px-2 py-0'>Chào! {adminProfile.hoTen}</span>
             <div className="dropdown">
                 <button className="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="https://i.pravatar.cc?1" width={50} className='rounded-circle' alt="" />
+                    {/* <img src="https://i.pravatar.cc?1" width={50} className='rounded-circle' alt="" /> */}
+                    <img src="/image/avt_boy.png" width={50} className='rounded-circle' alt="" />
                 </button>
                 <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                     <li><Link className="dropdown-item" href="/admin/thongtinadmin">Cập nhật thông tin</Link></li>

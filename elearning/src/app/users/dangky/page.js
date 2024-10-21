@@ -9,10 +9,13 @@ import {
   Form,
   Input,
 } from 'antd';
+import { useRouter } from 'next/navigation';
 
 const dangky = () => {
   const [form] = Form.useForm();
-  const onFinish = (values) => {
+  const router = useRouter();
+
+  const userRegister = async (values) => {
     const userRegis = {
       taiKhoan: values.taiKhoan,
       matKhau: values.matKhau,
@@ -21,15 +24,19 @@ const dangky = () => {
       maNhom: 'GP01',
       email: values.email
     }
-    signupActionApi(userRegis);
-    form.resetFields();
+    const regis = await signupActionApi(userRegis);
+    // form.resetFields();
+    if (regis) {
+      router.push('/users/dangnhap');
+    }
   };
+
   return (
     <Form
       className={styles.loginForm}
       form={form}
       name="register"
-      onFinish={onFinish}
+      onFinish={userRegister}
       scrollToFirstError
     >
       <p className={`${styles.formTitle}`}>ĐĂNG KÝ</p>

@@ -28,7 +28,8 @@ const RegisteredCourse = () => {
             setFilteredCourses(result.chiTietKhoaHocGhiDanh);
             setTaiKhoan(result.taiKhoan);
         } catch (error) {
-            router.push('not-found');
+            // Tạo Bug
+            // router.push('not-found');
         }
     };
 
