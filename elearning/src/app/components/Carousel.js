@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from '../assets/css/Layout/carousel.module.css'
 import btn from '../assets/css/Components/button.module.css'
+import Link from 'next/link'
 const Carousel = () => {
     
 
@@ -12,7 +13,7 @@ const Carousel = () => {
                     <h1><span>Chào mừng</span> <br></br> đến với E-learning</h1>
                     <p>Trung tâm giáo dục <br></br> hàng đầu về lập trình tại Việt Nam</p>
                     <div className={`${styles.carouselBtn}`}>
-                        <a className={`${btn.buttonBg1}`} href="#" role="button">Xem khoá học</a>
+                        <Link className={`${btn.buttonBg1}`} href="/khoahoc" role="button">Xem khoá học</Link>
                         <a className={`${btn.buttonBg2}`} href="#" role="button">Tư vấn học</a>              
                     </div>
                 </div>

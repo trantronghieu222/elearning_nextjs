@@ -99,7 +99,21 @@ const dangky = () => {
         name="soDT"
         rules={[
           { required: true, message: 'Số điện thoại không được để trống!' },
-          { pattern: /^[0-9]+$/, message: 'Số điện thoại không hợp lệ!' },
+          // { pattern: /^[0-9]+$/, message: 'Số điện thoại không hợp lệ!' },
+          {
+            validator: (_, value) => {
+              if (!value) {
+                return Promise.resolve();
+              }
+              if (!/^[0-9]+$/.test(value)) {
+                return Promise.reject(new Error('Số điện thoại không hợp lệ!'));
+              }
+              if (value.length < 7 || value.length > 11) {
+                return Promise.reject(new Error('Số điện thoại phải từ 7 - 11 chữ số!'));
+              }
+              return Promise.resolve();
+            }
+          }
         ]}
       >
         <Input placeholder='Số điện thoại' prefix={<PhoneOutlined />} className={styles.antInput} />
