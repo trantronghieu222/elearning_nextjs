@@ -48,7 +48,8 @@ const UserDropdown = (props) => {
       }
       trigger={['click']}
     >
-      <a onClick={(e) => e.preventDefault()} className={styles.dropdownTrigger}>
+      {/* Thêm ID */}
+      <a onClick={(e) => e.preventDefault()} id='userDropdown' className={styles.dropdownTrigger}>
         <Space>
           {userLogin.hoTen}
           <DownOutlined />

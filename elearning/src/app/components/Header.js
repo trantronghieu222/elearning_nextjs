@@ -113,7 +113,7 @@ const Header = (props) => {
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
                             />
-                            <button className={`btn my-2 my-sm-0 ${btn.buttonSearch}`} type="submit">
+                            <button className={`btn my-2 my-sm-0 search_btn ${btn.buttonSearch}`} type="submit">
                                 <i className="fa fa-search"></i>
                             </button>
                         </form>

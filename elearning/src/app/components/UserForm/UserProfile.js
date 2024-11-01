@@ -36,11 +36,10 @@ const UserProfile = (props) => {
                 email: values.email
             }
             await updateUserApi(users);
-            // không cần thiết
             // đóng lại để tạo bug
-            // setTimeout(() => {
-            //     window.location.href = '/thongtintaikhoan';
-            // }, 1000);
+            setTimeout(() => {
+                window.location.href = '/thongtintaikhoan';
+            }, 1000);
         } catch {
             message.error('Cập nhật thông tin thất bại');
         }

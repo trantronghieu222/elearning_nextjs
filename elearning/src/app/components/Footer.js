@@ -1,9 +1,29 @@
+"use client"
 import React from 'react'
 import Link from 'next/link'
 import styles from '../assets/css/Layout/footer.module.css';
+import { Button, Form, Input, InputNumber, message } from 'antd';
+import emailjs from 'emailjs-com';
+
 const Footer = () => {
+    const onFinish = (values) => {
+        emailjs.send('service_43m459r', 'template_yuxquua', {
+            from_name: values.name,
+            from_email: values.email,
+            from_phone: values.phone,
+        }, 'E9YiPA9C6ApDU7vSe')
+        .then((response) => {
+            // console.log('Gửi email thành công!', response.status, response.text);
+            message.success('Đăng ký tư vấn thành công')
+        })
+        .catch((err) => {
+            console.error('Gửi email thất bại:', err);
+            // alert('Gửi email thất bại, vui lòng thử lại!');
+            message.error('Gửi email thất bại, vui lòng thử lại!')
+        });
+    };
     return (
-        <div className={`${styles.footer}`}>
+        <div id='footer' className={`${styles.footer}`}>
             <div className={`container ${styles.footerContent}`}>
                 <div className='row'>
                     <div className={`${styles.ftCol} col-12 col-lg-4`}>
@@ -26,20 +46,58 @@ const Footer = () => {
                     </div>
                     <div className={`${styles.ftCol} col-12 col-lg-4`}>
                         <h3>Đăng ký tư vấn</h3>
-                        <form>
-                            <div className="mb-3">
-                                <input type="text" className="form-control" placeholder='Họ và tên *' aria-describedby="helpId" />
-                            </div>
-                            <div className="mb-3">
-                                <input type="text" className="form-control" placeholder='Email liên hệ *' aria-describedby="helpId" />
-                            </div>
-                            <div className="mb-3">
-                                <input type="text" className="form-control" placeholder='Điện thoại liên hệ *' aria-describedby="helpId" />
-                            </div>
-                            <button type="button" className={`${styles.btnRegis} btn`}>
-                                Đăng ký
-                            </button>
-                        </form>
+                        <Form
+                            name="nest-messages"
+                            onFinish={onFinish}
+                            style={{
+                                maxWidth: 600,
+                            }}
+                        >
+                            <Form.Item
+                                name="name"
+                                rules={[
+                                    { required: true, message: "Không được để trống tên!" },
+                                ]}
+                            >
+                                <Input placeholder='Nhập họ và tên'/>
+                            </Form.Item>
+                            <Form.Item
+                                name="email"
+                                rules={[
+                                    { required: true, message: "Không được để trống email!" },
+                                    { type: 'email', message: "Email không hợp lệ" }
+                                ]}
+                            >
+                                <Input placeholder='Nhập email'/>
+                            </Form.Item>
+                            <Form.Item
+                                name="phone"
+                                rules={[
+                                    { required: true, message: "Không được để trống số điện thoại!" },
+                                    {
+                                        validator: (_, value) => {
+                                            if (!value) {
+                                                return Promise.resolve();
+                                            }
+                                            if (!/^[0-9]+$/.test(value)) {
+                                                return Promise.reject(new Error('Số điện thoại không hợp lệ!'));
+                                            }
+                                            if (value.length < 7 || value.length > 11) {
+                                                return Promise.reject(new Error('Số điện thoại phải từ 7 - 11 chữ số!'));
+                                            }
+                                            return Promise.resolve();
+                                        }
+                                    }
+                                ]}
+                            >
+                                <Input placeholder='Nhập số điện thoại'/>
+                            </Form.Item>
+                            <Form.Item>
+                                <Button type="btn" htmlType="submit" className={`${styles.btnRegis}`}>
+                                    Đăng ký
+                                </Button>
+                            </Form.Item>
+                        </Form>
                     </div>
                     <div className={`${styles.ftCol} col-12 col-lg-4`}>
                         <h3>Liên hệ</h3>

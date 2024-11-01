@@ -14,7 +14,7 @@ const Carousel = () => {
                     <p>Trung tâm giáo dục <br></br> hàng đầu về lập trình tại Việt Nam</p>
                     <div className={`${styles.carouselBtn}`}>
                         <Link className={`${btn.buttonBg1}`} href="/khoahoc" role="button">Xem khoá học</Link>
-                        <a className={`${btn.buttonBg2}`} href="#" role="button">Tư vấn học</a>              
+                        <Link className={`${btn.buttonBg2}`} href="#contact" role="button">Tư vấn học</Link>              
                     </div>
                 </div>
             </div>

@@ -8,17 +8,6 @@ const Header = () => {
     const [adminProfile, setAdminProfile] = useState();
     const router = useRouter();
 
-    // useEffect(() => {
-    //     getUserInfo().then(result => {
-    //         if (result.maLoaiNguoiDung == 'GV') {
-    //             setAdminProfile(result);
-    //         } else {
-    //             // Tạo Bug
-    //             // router.push('/not-found');
-    //         }
-    //     })
-    // }, [])
-
     useEffect(() => {
         const checkUser = async () => {
             try {
@@ -27,8 +16,8 @@ const Header = () => {
                 if (result && result.maLoaiNguoiDung === 'GV') {
                     setAdminProfile(result);
                 } else {
-                    // Tạo Bug
-                    // router.push('/not-found');
+                    // Tạo Bug thì cmt
+                    router.push('/not-found');
                 }
             } catch (error) {
                 console.error('Failed to fetch user info:', error);

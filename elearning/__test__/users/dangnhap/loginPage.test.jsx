@@ -46,7 +46,7 @@ describe('TC_DangNhap', () => {
 
         await act(async () => {
             fireEvent.change(screen.getByPlaceholderText('Tài khoản'), { target: { value: 'bbb111' } });
-            fireEvent.change(screen.getByPlaceholderText('Mật khẩu'), { target: { value: '12345' } });
+            fireEvent.change(screen.getByPlaceholderText('Mật khẩu'), { target: { value: '123456' } });
             fireEvent.click(screen.getByRole('button', { name: 'ĐĂNG NHẬP' }));
         });
 

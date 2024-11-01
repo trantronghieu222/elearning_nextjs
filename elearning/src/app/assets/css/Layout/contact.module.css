@@ -19,5 +19,8 @@
 }
 
 .contactContainer .contactRight h1 {
+    /* -- Tạo Bug -- */
+    /* font-size: 2.8rem; */
+    /* ------------ */
     color: #3d3e5a;
 }

@@ -293,7 +293,7 @@ const Detail = (props) => {
                                     <h5 className="card-title">500.000đ</h5><Rate allowHalf defaultValue={4.5} disabled />
                                 </div>
                                 {/* Đăng ký */}
-                                <button className={`btn w-100 mt-2 ${btn.buttonSearch}`} onClick={handleRegister}> Đăng ký</button>
+                                <button id='btn_DangKy_KH' className={`btn w-100 mt-2 ${btn.buttonSearch}`} onClick={handleRegister}> Đăng ký</button>
                             </div>
                             {/* Card-info */}
                             <ul className="list-group list-group-flush">
