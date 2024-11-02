@@ -64,7 +64,7 @@ const Footer = () => {
                                             ]}
                                             style={{ margin: 0 }}
                                         >
-                                            <Input id="form1" className={styles.input} placeholder='Nhập email' />
+                                            <Input id="form1" className={styles.input} placeholder='Email nhận khuyến mãi' />
                                         </Form.Item>
 
                                         <Form.Item style={{ margin: 0 }}>
