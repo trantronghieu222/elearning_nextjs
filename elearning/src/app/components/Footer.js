@@ -6,22 +6,37 @@ import { Button, Form, Input, InputNumber, message } from 'antd';
 import emailjs from 'emailjs-com';
 
 const Footer = () => {
-    const onFinish = (values) => {
+    const DkiTuVan = (values) => {
         emailjs.send('service_43m459r', 'template_yuxquua', {
             from_name: values.name,
             from_email: values.email,
             from_phone: values.phone,
         }, 'E9YiPA9C6ApDU7vSe')
-        .then((response) => {
-            // console.log('Gửi email thành công!', response.status, response.text);
-            message.success('Đăng ký tư vấn thành công')
-        })
-        .catch((err) => {
-            console.error('Gửi email thất bại:', err);
-            // alert('Gửi email thất bại, vui lòng thử lại!');
-            message.error('Gửi email thất bại, vui lòng thử lại!')
-        });
+            .then((response) => {
+                // console.log('Gửi email thành công!', response.status, response.text);
+                message.success('Đăng ký tư vấn thành công')
+            })
+            .catch((err) => {
+                console.error('Gửi email thất bại:', err);
+                // alert('Gửi email thất bại, vui lòng thử lại!');
+                message.error('Gửi email thất bại, vui lòng thử lại!')
+            });
     };
+
+    const DkiKM = (values) => {
+        emailjs.send('service_43m459r', 'template_qln1nb7', {
+            to_email: values.email,
+        }, 'E9YiPA9C6ApDU7vSe')
+            .then((response) => {
+                console.log('Gửi email thành công!', response.status, response.text);
+                message.success('Đăng ký nhận khuyến mãi thành công!');
+            })
+            .catch((err) => {
+                console.error('Gửi email thất bại:', err);
+                message.error('Gửi email thất bại, vui lòng thử lại!');
+            });
+    };
+
     return (
         <div id='footer' className={`${styles.footer}`}>
             <div className={`container ${styles.footerContent}`}>
@@ -34,21 +49,39 @@ const Footer = () => {
                         <div className={`${styles.ftNews}`}>
                             <h3>Nhận tin sự kiện & khuyến mãi</h3>
                             <p>E-learning sẽ gởi các khoá học trực tuyến & các chương trình hoàn toàn MIỄN PHÍ và các chương trình KHUYẾN MÃI hấp dẫn đến các bạn</p>
-                            <div className={`${styles.newsRegis} input-group`}>
-                                <div className="form-outline" data-mdb-input-init>
-                                    <input type="search" id="form1" className="form-control" placeholder='your.address@gmail.com' />
-                                </div>
-                                <button type="button" className={`${styles.btnRegis} btn`} data-mdb-ripple-init>
-                                    Đăng ký
-                                </button>
+                            <div className={styles.newRegis}>
+                                <Form
+                                    name="KhuyenMai"
+                                    style={{ maxWidth: 600 }}
+                                    onFinish={DkiKM}
+                                >
+                                    <div className={styles.inputContainer} data-mdb-input-init>
+                                        <Form.Item
+                                            name="email"
+                                            rules={[
+                                                { required: true, message: "Không được để trống email!" },
+                                                { type: 'email', message: "Email không hợp lệ" }
+                                            ]}
+                                            style={{ margin: 0 }}
+                                        >
+                                            <Input id="form1" className={styles.input} placeholder='Nhập email' />
+                                        </Form.Item>
+
+                                        <Form.Item style={{ margin: 0 }}>
+                                            <Button type="btn" htmlType="submit" className={styles.btnRegis}>
+                                                Nhận KM
+                                            </Button>
+                                        </Form.Item>
+                                    </div>
+                                </Form>
                             </div>
                         </div>
                     </div>
                     <div className={`${styles.ftCol} col-12 col-lg-4`}>
                         <h3>Đăng ký tư vấn</h3>
                         <Form
-                            name="nest-messages"
-                            onFinish={onFinish}
+                            name="TuVan"
+                            onFinish={DkiTuVan}
                             style={{
                                 maxWidth: 600,
                             }}
@@ -59,7 +92,7 @@ const Footer = () => {
                                     { required: true, message: "Không được để trống tên!" },
                                 ]}
                             >
-                                <Input placeholder='Nhập họ và tên'/>
+                                <Input placeholder='Nhập họ và tên' />
                             </Form.Item>
                             <Form.Item
                                 name="email"
@@ -68,7 +101,7 @@ const Footer = () => {
                                     { type: 'email', message: "Email không hợp lệ" }
                                 ]}
                             >
-                                <Input placeholder='Nhập email'/>
+                                <Input placeholder='Nhập email' />
                             </Form.Item>
                             <Form.Item
                                 name="phone"
@@ -90,11 +123,11 @@ const Footer = () => {
                                     }
                                 ]}
                             >
-                                <Input placeholder='Nhập số điện thoại'/>
+                                <Input placeholder='Nhập số điện thoại' />
                             </Form.Item>
                             <Form.Item>
                                 <Button type="btn" htmlType="submit" className={`${styles.btnRegis}`}>
-                                    Đăng ký
+                                    Đăng ký tư vấn
                                 </Button>
                             </Form.Item>
                         </Form>
