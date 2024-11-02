@@ -68,7 +68,7 @@ const Footer = () => {
                                         </Form.Item>
 
                                         <Form.Item style={{ margin: 0 }}>
-                                            <Button type="btn" htmlType="submit" className={styles.btnRegis}>
+                                            <Button id='btnKhuyenMai' type="btn" htmlType="submit" className={styles.btnRegis}>
                                                 Nhận KM
                                             </Button>
                                         </Form.Item>
@@ -126,7 +126,7 @@ const Footer = () => {
                                 <Input placeholder='Nhập số điện thoại' />
                             </Form.Item>
                             <Form.Item>
-                                <Button type="btn" htmlType="submit" className={`${styles.btnRegis}`}>
+                                <Button id='btnTuVan' type="btn" htmlType="submit" className={`${styles.btnRegis}`}>
                                     Đăng ký tư vấn
                                 </Button>
                             </Form.Item>
