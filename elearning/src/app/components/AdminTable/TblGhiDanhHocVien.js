@@ -28,7 +28,7 @@ const columnChoXacThuc = (maKhoaHoc, fetchHvChoXetDuyet, fetchHvDaGhiDanh) => [
         key: 'action',
         render: (_, record) => (
             <Space size="middle">
-                <button className='btn btn-success'
+                <button className='btn btn-success' id='btn_XT_HV'
                     onClick={
                         async () => {
                             await enrollCourseApi(maKhoaHoc, record.taiKhoan);
@@ -39,7 +39,7 @@ const columnChoXacThuc = (maKhoaHoc, fetchHvChoXetDuyet, fetchHvDaGhiDanh) => [
                 >
                     Xác thực
                 </button>
-                <button className='btn btn-danger'
+                <button className='btn btn-danger' id='btn_Huy_XT_HV'
                     onClick={async () => {
                         const confirm = window.confirm("Bạn có chắc chắn muốn xoá học viên này?");
                         if (confirm) {
@@ -77,7 +77,7 @@ const columnDaGhiDanh = (maKhoaHoc, fetchHvDaGhiDanh) => [
         key: 'action',
         render: (_, record) => (
             <Space size="middle">
-                <button className='btn btn-danger'
+                <button className='btn btn-danger' id='btn_Huy_GD_HV'
                     onClick={async () => {
                         const confirm = window.confirm("Bạn có chắc chắn muốn xoá học viên này?");
                         if (confirm) {
