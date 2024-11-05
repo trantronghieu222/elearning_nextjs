@@ -7,18 +7,13 @@ import title from '../assets/css/Components/title.module.css';
 import btn from '../assets/css/Components/button.module.css';
 const CourseCard = (props) => {
     const { dsKhoahoc } = props;
-
-    // State for pagination
+    
     const [currentPage, setCurrentPage] = useState(1);
-    const [pageSize] = useState(12); // Số khoá học mỗi trang
+    const [pageSize] = useState(12);
 
-    // Calculate total pages
     const total = dsKhoahoc.length;
-
-    // Get current page data
     const currentData = dsKhoahoc.slice((currentPage - 1) * pageSize, currentPage * pageSize);
 
-    // Handle page change
     const handlePageChange = (page) => {
         setCurrentPage(page);
     };
