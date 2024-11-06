@@ -37,9 +37,9 @@ const UserProfile = (props) => {
             }
             await updateUserApi(users);
             // đóng lại để tạo bug
-            setTimeout(() => {
-                window.location.href = '/thongtintaikhoan';
-            }, 1000);
+            // setTimeout(() => {
+            //     window.location.href = '/thongtintaikhoan';
+            // }, 1000);
         } catch {
             message.error('Cập nhật thông tin thất bại');
         }
